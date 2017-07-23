@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoverMover", "RoverMover\Ro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoverTester", "RoverTester\RoverTester.csproj", "{3B169D12-68C5-4D88-84AE-A15CE640247F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{BA754614-44B5-4F10-ABD7-AEA48E349B46}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\C#Libraries\StructureMap.dll = ..\..\C#Libraries\StructureMap.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
