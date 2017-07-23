@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RoverMover.Interfaces;
 
 namespace RoverMover
 {
-    public class RoverController
+    public class RoverController : IRoverController
     {
         private Rover _rover;
         public RoverController()
@@ -27,5 +23,12 @@ namespace RoverMover
             _rover.YCoOrdinate = _rover.YCoOrdinate + 1;
             return _rover;
         }
+
+        public Rover MoveBackward()
+        {
+            _rover.YCoOrdinate = _rover.YCoOrdinate - 1;
+            return _rover;
+        }
+        
     }
 }
