@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compass.cs" />
+    <Compile Include="ControlInterface.cs" />
     <Compile Include="DependencyInjection\DependencyRegistry.cs" />
     <Compile Include="Interfaces\IRoverController.cs" />
     <Compile Include="Interfaces\IRoverTurn.cs" />

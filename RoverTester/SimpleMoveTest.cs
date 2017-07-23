@@ -9,11 +9,11 @@ namespace RoverTester
         [TestMethod]
         public void MoveRoverForwardOneSquare()
         {
-            var controller = new RoverController();
+            var controller = new ControlInterface();
             var rover = new Rover();
             var y = 0;
 
-            rover = controller.MoveForward();
+            rover = controller.Command("F");
 
             Assert.AreEqual((y + 1), rover.YCoOrdinate);
         }
@@ -21,11 +21,11 @@ namespace RoverTester
         [TestMethod]
         public void MoveRoverBackwardOneSquare()
         {
-            var controller = new RoverController();
+            var controller = new ControlInterface();
             var rover = new Rover();
             var y = 0;
 
-            rover = controller.MoveBackward();
+            rover = controller.Command("B");
 
             Assert.AreEqual((y - 1), rover.YCoOrdinate);
         }
@@ -33,11 +33,10 @@ namespace RoverTester
         [TestMethod]
         public void MoveRoverRightAndForward()
         {
-            var controller = new RoverController();
+            var controller = new ControlInterface();
             var rover = new Rover();
 
-            rover = controller.TurnRight();
-            rover = controller.MoveForward();
+            rover = controller.Command("RF");
 
             Assert.AreEqual(0, rover.YCoOrdinate);
             Assert.AreEqual(1, rover.XCoOrdinate);
@@ -47,10 +46,10 @@ namespace RoverTester
         [TestMethod]
         public void TurnRoverLeft()
         {
-            var controller = new RoverController();
+            var controller = new ControlInterface();
             var rover = new Rover();
 
-            rover = controller.TurnLeft();
+            rover = controller.Command("L");
 
             Assert.AreEqual(Compass.W, rover.CompassDirection);
         }
@@ -58,10 +57,10 @@ namespace RoverTester
         [TestMethod]
         public void TurnRoverRight()
         {
-            var controller = new RoverController();
+            var controller = new ControlInterface();
             var rover = new Rover();
 
-            rover = controller.TurnRight();
+            rover = controller.Command("R");
 
             Assert.AreEqual(Compass.E, rover.CompassDirection);
         }

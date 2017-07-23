@@ -10,6 +10,10 @@ namespace RoverMover.DependencyInjection
             For<IRoverTurn>()
                 .Singleton()
                 .Use<RoverTurn>();
+
+            For<IRoverController>()
+                .Singleton()
+                .Use<RoverController>();
         }
     }
 }

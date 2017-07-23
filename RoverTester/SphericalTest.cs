@@ -9,11 +9,11 @@ namespace RoverTester
         [TestMethod]
         public void MoveForward101Spaces()
         {
-            var controller = new RoverController();
+            var controller = new ControlInterface();
             var rover = new Rover();
             var y = 0;
 
-            rover = controller.MoveForward();
+            rover = controller.Command("F");
 
             Assert.AreEqual((y + 1), rover.YCoOrdinate);
         }
