@@ -11,11 +11,11 @@ namespace RoverTester
         {
             var controller = new ControlInterface();
             var rover = new Rover();
-            var y = 0;
 
-            rover = controller.Command("F");
+            for(int i =0; i < 101; i++)
+                rover = controller.Command("F");
 
-            Assert.AreEqual((y + 1), rover.YCoOrdinate);
+            Assert.AreEqual(0, rover.YCoOrdinate);
         }
     }
 }
