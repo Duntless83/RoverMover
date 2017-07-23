@@ -11,11 +11,10 @@ namespace RoverTester
         {
             var controller = new ControlInterface();
             var rover = new Rover();
-            var y = 0;
 
             rover = controller.Command("F");
 
-            Assert.AreEqual((y + 1), rover.YCoOrdinate);
+            Assert.AreEqual(1, rover.YCoOrdinate);
         }
 
         [TestMethod]
@@ -23,11 +22,10 @@ namespace RoverTester
         {
             var controller = new ControlInterface();
             var rover = new Rover();
-            var y = 0;
 
             rover = controller.Command("B");
 
-            Assert.AreEqual((y - 1), rover.YCoOrdinate);
+            Assert.AreEqual(100, rover.YCoOrdinate);
         }
 
         [TestMethod]

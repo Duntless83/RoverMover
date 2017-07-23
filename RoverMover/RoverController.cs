@@ -19,19 +19,52 @@ namespace RoverMover
         public Rover MoveForward()
         {
             if (_rover.CompassDirection == Compass.N || _rover.CompassDirection == Compass.S)
+            {
                 _rover.YCoOrdinate = _rover.YCoOrdinate + 1;
+                if (_rover.YCoOrdinate == 101)
+                    _rover.YCoOrdinate = 0;
+            }
             else
-                _rover.XCoOrdinate = _rover.XCoOrdinate + 1;
-
+            {
+                if (_rover.CompassDirection == Compass.E)
+                {
+                    _rover.XCoOrdinate = _rover.XCoOrdinate + 1;
+                    if (_rover.XCoOrdinate == 101)
+                        _rover.XCoOrdinate = 0;
+                }
+                else
+                {
+                    _rover.XCoOrdinate = _rover.XCoOrdinate - 1;
+                    if (_rover.XCoOrdinate == -1)
+                        _rover.XCoOrdinate = 100;
+                }
+            }
             return _rover;
         }
 
         public Rover MoveBackward()
         {
             if (_rover.CompassDirection == Compass.N || _rover.CompassDirection == Compass.S)
+            {
                 _rover.YCoOrdinate = _rover.YCoOrdinate - 1;
+                if (_rover.YCoOrdinate == -1)
+                    _rover.YCoOrdinate = 100;
+            }
             else
-                _rover.XCoOrdinate = _rover.XCoOrdinate - 1;
+            {
+                if (_rover.CompassDirection == Compass.E)
+                {
+                    _rover.XCoOrdinate = _rover.XCoOrdinate - 1;
+                    if (_rover.XCoOrdinate == -1)
+                        _rover.XCoOrdinate = 100;
+                }
+                else
+                {
+                    _rover.XCoOrdinate = _rover.XCoOrdinate + 1;
+                    if (_rover.XCoOrdinate == 101)
+                        _rover.XCoOrdinate = -1;
+                }
+            }
 
             return _rover;
         }
