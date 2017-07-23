@@ -21,20 +21,23 @@ namespace RoverMover
             _turner = container.GetInstance<IRoverTurn>();
         }
 
-        public Rover ReturnRover()
-        {
-            return _rover;
-        }
-
         public Rover MoveForward()
         {
-            _rover.YCoOrdinate = _rover.YCoOrdinate + 1;
+            if (_rover.CompassDirection == Compass.N || _rover.CompassDirection == Compass.S)
+                _rover.YCoOrdinate = _rover.YCoOrdinate + 1;
+            else
+                _rover.XCoOrdinate = _rover.XCoOrdinate + 1;
+
             return _rover;
         }
 
         public Rover MoveBackward()
         {
-            _rover.YCoOrdinate = _rover.YCoOrdinate - 1;
+            if (_rover.CompassDirection == Compass.N || _rover.CompassDirection == Compass.S)
+                _rover.YCoOrdinate = _rover.YCoOrdinate - 1;
+            else
+                _rover.XCoOrdinate = _rover.XCoOrdinate - 1;
+
             return _rover;
         }
 

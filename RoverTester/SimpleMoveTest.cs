@@ -13,9 +13,6 @@ namespace RoverTester
             var rover = new Rover();
             var y = 0;
 
-            rover = controller.ReturnRover();
-            y = rover.YCoOrdinate;
-
             rover = controller.MoveForward();
 
             Assert.AreEqual((y + 1), rover.YCoOrdinate);
@@ -28,12 +25,23 @@ namespace RoverTester
             var rover = new Rover();
             var y = 0;
 
-            rover = controller.ReturnRover();
-            y = rover.YCoOrdinate;
-
             rover = controller.MoveBackward();
 
             Assert.AreEqual((y - 1), rover.YCoOrdinate);
+        }
+
+        [TestMethod]
+        public void MoveRoverRightAndForward()
+        {
+            var controller = new RoverController();
+            var rover = new Rover();
+
+            rover = controller.TurnRight();
+            rover = controller.MoveForward();
+
+            Assert.AreEqual(0, rover.YCoOrdinate);
+            Assert.AreEqual(1, rover.XCoOrdinate);
+            Assert.AreEqual(Compass.E, rover.CompassDirection);
         }
 
         [TestMethod]

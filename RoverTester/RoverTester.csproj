@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="SimpleMoveTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SphericalTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

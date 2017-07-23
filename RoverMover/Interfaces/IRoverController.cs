@@ -4,6 +4,7 @@
     {
         Rover MoveForward();
         Rover MoveBackward();
-        Rover ReturnRover();
+        Rover TurnLeft();
+        Rover TurnRight();
     }
 }
